@@ -13,25 +13,25 @@ const Navbar = () => {
     {
       icon: faHome,
       className: "stroke-C_DullBlack stroke-[30] text-white",
-      move: "translate-y-[-1rem] duration-500",
+      move: "translate-y-[-1rem] duration-500 stroke-none",
       name: "Home",
     },
     {
       icon: faPlus,
       className: " text-C_DullBlack stroke-[30] rounded-md ",
-      move: "translate-y-[-1rem] duration-500",
+      move: "translate-y-[-1rem] duration-500 stroke-none",
       name: "Add file",
     },
     {
       icon: faBookmark,
       className: "stroke-C_DullBlack stroke-[30] text-white",
-      move: "translate-y-[-1rem] duration-500",
+      move: "translate-y-[-1rem] duration-500 stroke-none",
       name: "Bookmarks",
     },
     {
       icon: faFile,
       className: "stroke-C_DullBlack stroke-[30] text-white",
-      move: "translate-y-[-1rem] duration-500",
+      move: "translate-y-[-1rem] duration-500 stroke-none",
       name: "Files",
     },
   ];
