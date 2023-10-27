@@ -53,7 +53,7 @@ const Navbar = () => {
           >
             <FontAwesomeIcon
               icon={icon.icon}
-              className={`text-xs ${
+              className={`text-md ${
                 active === index ? " text-C_Blue font-extrabold scale-150 " : ""
               } transition-colors duration-300`}
             />
