@@ -20,7 +20,7 @@ const Navbar = () => {
       icon: faPlus,
       className: " text-C_DullBlack stroke-[30] rounded-md ",
       move: "translate-y-[-1rem] duration-500 stroke-none",
-      name: "Add file",
+      name: "Upload",
     },
     {
       icon: faBookmark,
@@ -32,12 +32,12 @@ const Navbar = () => {
       icon: faFile,
       className: "stroke-C_DullBlack stroke-[30] text-white",
       move: "translate-y-[-1rem] duration-500 stroke-none",
-      name: "Files",
+      name: "Summeries",
     },
   ];
 
   return (
-    <div className="px-6  flex gap-7 bg-C_GreyShades border-t-2 border-b-0 justify-around overflow-hidden sticky bottom-0">
+    <div className="px-6  flex gap-7 bg-C_GreyShades border-t-2 border-b-0 justify-around overflow-y-hidden">
       {navIcons.map((icon, index) => (
         <div
           className="w-14  h-14 flex flex-col relative  items-center justify-center"

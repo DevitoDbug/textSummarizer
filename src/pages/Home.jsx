@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import fileUpload from "../../public/file.svg";
-import RecentSummaries from "../components/RecentSummaries";
 const Home = () => {
   return (
     <div className="h-[100svh] w-full font-poppin flex flex-col">
@@ -44,10 +43,9 @@ const Home = () => {
             <span className="text-C_Blue">Choose from files</span>
           </span>
         </div>
-        <RecentSummaries />
       </div>
 
-      <div className="h-[10%]">
+      <div className="h-[10%] sticky bottom-0">
         <Navbar />
       </div>
     </div>

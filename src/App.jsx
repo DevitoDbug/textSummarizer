@@ -1,9 +1,9 @@
-import Home from "./pages/Home";
+import Summeries from "./pages/Summeries";
 import "./styles/navbar.scss";
 const App = () => {
   return (
     <div className=" w-screen h-screen bg-C_GreyShades ">
-      <Home />
+      <Summeries />
     </div>
   );
 };
