@@ -47,7 +47,7 @@ const SummaryCard = ({
           >
             <FontAwesomeIcon
               icon={faClose}
-              className="absolute top-3 right-3 z-20"
+              className="text-white absolute top-3 right-3 z-20"
             />
           </button>
         )}
