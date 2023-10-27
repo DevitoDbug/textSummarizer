@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
+import fileUpload from "../../public/file.svg";
 const Home = () => {
   return (
     <div className="h-full w-full font-poppin flex flex-col">
@@ -29,7 +30,20 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="h-[70%]">body</div>
+      <div className="h-[70%] flex flex-col items-center">
+        <div className=" border-2 p-9 mt-9 border-dashed">
+          <img src={fileUpload} alt="Upload File" />
+        </div>
+        <div className="flex flex-col mx-8 text-center text-C_GreyBlue">
+          <span className=" text-3xl font-medium tracking-tighter">
+            Drop file
+          </span>
+          <span className="text-xs px-6 flex flex-col">
+            Oops! There are no documents selected{" "}
+            <span className="text-C_Blue">Choose from files</span>
+          </span>
+        </div>
+      </div>
 
       <div className="h-[10%]">
         <Navbar />

@@ -20,13 +20,13 @@ const Navbar = () => {
       icon: faPlus,
       className: " text-C_DullBlack stroke-[30] rounded-md ",
       move: "translate-y-[-1rem] duration-500",
-      name: "Add",
+      name: "Add file",
     },
     {
       icon: faBookmark,
       className: "stroke-C_DullBlack stroke-[30] text-white",
       move: "translate-y-[-1rem] duration-500",
-      name: "Bookmark",
+      name: "Bookmarks",
     },
     {
       icon: faFile,

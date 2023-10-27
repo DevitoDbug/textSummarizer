@@ -7,6 +7,7 @@ export default {
         C_Blue: "#3651DA",
         C_Black: "#000",
         C_DullBlack: "#60718B",
+        C_GreyBlue: "#36404F",
         C_WhiteGray: "#D5DAE2",
         C_TextWhite: "#FDFDFE",
         C_TextWhiteDull: "#747474",
