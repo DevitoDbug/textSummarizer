@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import fileUpload from "../../public/file.svg";
+import RecentSummaries from "../components/RecentSummaries";
 const Home = () => {
   return (
     <div className="h-[100svh] w-full font-poppin flex flex-col">
@@ -23,14 +24,14 @@ const Home = () => {
         <div className="mt-4 flex justify-between border rounded-xl shadow-md p-3 text-sm text-C_TextWhiteDull border-C_WhiteGray ">
           <input
             type="text"
-            placeholder="Previous Summery..."
+            placeholder="Previous Summeries..."
             className="bg-transparent w-3/4 border-none outline-none text-C_DullBlack"
           />
           <FontAwesomeIcon icon={faSearch} />
         </div>
       </div>
 
-      <div className="h-[70%] flex flex-col items-center overflow-scroll">
+      <div className="h-[70%] flex flex-col items-center ">
         <div className=" border-2 px-20 py-9 mt-9 border-dashed">
           <img src={fileUpload} alt="Upload File" />
         </div>
@@ -43,6 +44,7 @@ const Home = () => {
             <span className="text-C_Blue">Choose from files</span>
           </span>
         </div>
+        <RecentSummaries />
       </div>
 
       <div className="h-[10%]">
