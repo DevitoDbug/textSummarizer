@@ -37,7 +37,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="px-6  flex gap-7 bg-C_GreyShades border-t-2 border-b-0 justify-around overflow-hidden">
+    <div className="px-6  flex gap-7 bg-C_GreyShades border-t-2 border-b-0 justify-around overflow-hidden sticky bottom-0">
       {navIcons.map((icon, index) => (
         <div
           className="w-14  h-14 flex flex-col relative  items-center justify-center"
