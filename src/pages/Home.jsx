@@ -23,15 +23,15 @@ const Home = () => {
         <div className="mt-4 flex justify-between border rounded-xl shadow-md p-3 text-sm text-C_TextWhiteDull border-C_WhiteGray ">
           <input
             type="text"
-            placeholder="Search Document..."
+            placeholder="Previous Summery..."
             className="bg-transparent w-3/4 border-none outline-none text-C_DullBlack"
           />
           <FontAwesomeIcon icon={faSearch} />
         </div>
       </div>
 
-      <div className="h-[70%] flex flex-col items-center">
-        <div className=" border-2 p-9 mt-9 border-dashed">
+      <div className="h-[70%] flex flex-col items-center overflow-scroll">
+        <div className=" border-2 px-20 py-9 mt-9 border-dashed">
           <img src={fileUpload} alt="Upload File" />
         </div>
         <div className="flex flex-col mx-8 text-center text-C_GreyBlue">
