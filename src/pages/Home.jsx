@@ -5,7 +5,7 @@ import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import fileUpload from "../../public/file.svg";
 const Home = () => {
   return (
-    <div className="h-full w-full font-poppin flex flex-col">
+    <div className="h-[-webkit-fill-available] w-full font-poppin flex flex-col">
       <div className="h-[20%] px-8 pt-8">
         <div className="text-2xl px-1 font-medium flex gap-2 justify-between ">
           <div>
