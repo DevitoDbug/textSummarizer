@@ -7,7 +7,7 @@ const RecentSummaries = () => {
 
   return (
     <div className="mt-8 w-full flex flex-col justify-center items-center">
-      <div className="flex flex-row justify-between fixed top-0 bg-C_TextWhite shadow-md py-3 px-2 w-full">
+      <div className="z-30 flex flex-row justify-between fixed top-0 bg-C_TextWhite shadow-md py-3 px-2 w-full">
         <span className="text-lg">Recent summeries</span>
         {/* <span className="text-sm self-end text-C_Blue">View all </span> */}
       </div>
