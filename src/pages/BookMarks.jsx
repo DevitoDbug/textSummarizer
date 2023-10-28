@@ -1,18 +1,18 @@
-import React from "react";
-import SummaryCard from "../components/SummaryCard";
-import dummyData from "../data";
-import { useState } from "react";
+import React from 'react';
+import SummaryCard from '../components/SummaryCard';
+import dummyData from '../data';
+import { useState } from 'react';
 
 const BookMarks = () => {
   const [activePane, setActivePane] = useState(-1);
 
   return (
-    <div className="mt-8 w-full flex flex-col justify-center items-center">
-      <div className="z-30 flex flex-row justify-between fixed top-0 bg-C_TextWhite shadow-md py-3 px-2 w-full">
+    <div className="mt-8 flex h-full w-full flex-col items-center justify-center">
+      <div className="fixed top-0 z-30 flex w-full flex-row justify-between bg-C_TextWhite px-2 py-3 shadow-md">
         <span className="text-lg">Your Bookmarks</span>
         {/* <span className="text-sm self-end text-C_Blue">View all </span> */}
       </div>
-      <div className="w-[90%] pb-40 overflow-scroll mt-5">
+      <div className="mt-5 w-[90%] overflow-scroll pb-40">
         {dummyData.map((data, index) => (
           <SummaryCard
             key={index}

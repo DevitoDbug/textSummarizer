@@ -1,13 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import "./styles/navbar.scss";
-import Summeries from "./pages/Summeries";
-import BookMarks from "./pages/BookMarks";
-import ChatApp from "./pages/ChatApp";
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import './styles/navbar.scss';
+import Summeries from './pages/Summeries';
+import BookMarks from './pages/BookMarks';
+import ChatApp from './pages/ChatApp';
+import Navbar from './components/Navbar';
 const App = () => {
   return (
-    <div className=" w-screen h-screen bg-C_GreyShades ">
+    <div className=" h-screen w-screen bg-C_GreyShades ">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
