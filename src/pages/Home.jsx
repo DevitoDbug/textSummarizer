@@ -44,10 +44,6 @@ const Home = () => {
           </span>
         </div>
       </div>
-
-      <div className="h-[10%] sticky bottom-0">
-        <Navbar />
-      </div>
     </div>
   );
 };
