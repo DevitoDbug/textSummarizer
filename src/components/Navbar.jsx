@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   faBookmark,
   faFile,
   faHome,
   faRobot,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from "react-router-dom";
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [active, setActive] = useState(0);
@@ -15,39 +15,39 @@ const Navbar = () => {
   const navIcons = [
     {
       icon: faHome,
-      className: "stroke-C_DullBlack stroke-[30] text-white",
-      move: "translate-y-[-1rem] duration-500 stroke-none",
-      name: "Home",
-      path: "/",
+      className: 'stroke-C_DullBlack stroke-[30] text-white',
+      move: 'translate-y-[-1rem] duration-500 stroke-none',
+      name: 'Home',
+      path: '/',
     },
     {
       icon: faRobot,
-      className: " text-C_DullBlack stroke-[30] rounded-md ",
-      move: "translate-y-[-1rem] duration-500 stroke-none",
-      name: "Chat",
-      path: "chatapp", // Replace with the actual upload path
+      className: ' text-C_DullBlack stroke-[30] rounded-md ',
+      move: 'translate-y-[-1rem] duration-500 stroke-none',
+      name: 'Chat',
+      path: 'chatapp', // Replace with the actual upload path
     },
     {
       icon: faBookmark,
-      className: "stroke-C_DullBlack stroke-[30] text-white",
-      move: "translate-y-[-1rem] duration-500 stroke-none",
-      name: "Bookmarks",
-      path: "bookmarks", // Replace with the actual bookmarks path
+      className: 'stroke-C_DullBlack stroke-[30] text-white',
+      move: 'translate-y-[-1rem] duration-500 stroke-none',
+      name: 'Bookmarks',
+      path: 'bookmarks', // Replace with the actual bookmarks path
     },
     {
       icon: faFile,
-      className: "stroke-C_DullBlack stroke-[30] text-white",
-      move: "translate-y-[-1rem] duration-500 stroke-none",
-      name: "Summaries",
-      path: "summeries", // Replace with the actual summaries path
+      className: 'stroke-C_DullBlack stroke-[30] text-white',
+      move: 'translate-y-[-1rem] duration-500 stroke-none',
+      name: 'Summaries',
+      path: 'summeries', // Replace with the actual summaries path
     },
   ];
 
   return (
-    <div className="px-6 flex gap-7 bg-C_GreyShades border-t-2 border-b-0 justify-around overflow-y-hidden">
+    <div className="flex justify-around gap-7 overflow-y-hidden border-b-0 border-t-2 bg-C_GreyShades px-6">
       {navIcons.map((icon, index) => (
         <div
-          className="w-14 h-14 flex flex-col relative items-center justify-center"
+          className="relative flex h-14 w-14 flex-col items-center justify-center"
           key={index}
         >
           <button
@@ -56,24 +56,24 @@ const Navbar = () => {
               navigate(icon.path);
               console.log(index);
             }}
-            className={`flex justify-center items-center ${icon.className} ${
+            className={`flex items-center justify-center ${icon.className} ${
               active === index
                 ? icon.move
-                : "transform ease-in-out duration-500"
+                : 'transform duration-500 ease-in-out'
             }`}
           >
             <FontAwesomeIcon
               icon={icon.icon}
               className={`text-md ${
-                active === index ? " text-C_Blue font-extrabold scale-150 " : ""
+                active === index ? ' scale-150 font-extrabold text-C_Blue ' : ''
               } transition-colors duration-300`}
             />
           </button>
           <span
-            className={`text-xs absolute font-bold text-C_Blue ${
+            className={`absolute text-xs font-bold text-C_Blue ${
               active === index
-                ? "-bottom-6 opacity-100 transform ease-in-out -translate-y-8 duration-100"
-                : "-bottom-6 opacity-0 transform ease-in-out duration-100"
+                ? '-bottom-6 -translate-y-8 transform opacity-100 duration-100 ease-in-out'
+                : '-bottom-6 transform opacity-0 duration-100 ease-in-out'
             }`}
           >
             {icon.name}

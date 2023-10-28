@@ -17,6 +17,7 @@ const RecentSummaries = () => {
             key={index}
             size={data.size}
             name={data.name}
+            bookmarked={data.bookmarked}
             fileTypeImageUrl={data.fileTypeImageUrl}
             index={index}
             setActivePane={setActivePane}

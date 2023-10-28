@@ -1,7 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
-import OptionsPanel from "./OptionsPanel";
-import { faClose, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useRef, useState } from 'react';
+import OptionsPanel from './OptionsPanel';
+import {
+  faClose,
+  faEllipsisV,
+  faBookmark,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function SummaryCard({
   size,
@@ -10,6 +14,7 @@ function SummaryCard({
   index,
   setActivePane,
   activePane,
+  bookmarked,
 }) {
   const [showOptions, setShowOptions] = useState(false);
   const optionsRef = useRef(null);
@@ -28,16 +33,16 @@ function SummaryCard({
       }
     }
 
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
 
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
   return (
     <div
-      className="text-C_GreyBlue h-16 mt-2 flex flex-row rounded-xl py-3 px-4 items-center justify-between border border-C_WhiteGray"
+      className="mt-2 flex h-16 flex-row items-center justify-between rounded-xl border border-C_WhiteGray px-4 py-3 text-C_GreyBlue"
       ref={cardRef}
     >
       <div className="flex flex-row gap-2">
@@ -47,10 +52,13 @@ function SummaryCard({
           <span className="text-xs">{size}</span>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative flex gap-3">
+        {bookmarked && (
+          <FontAwesomeIcon icon={faBookmark} className=" text-C_Blue" />
+        )}
         <button
           className={`${
-            index === activePane ? `text-C_Blue scale-110` : `text-C_GreyBlue`
+            index === activePane ? `scale-110 text-C_Blue` : `text-C_GreyBlue`
           }`}
           onClick={handleOptionsClick}
         >
@@ -70,7 +78,7 @@ function SummaryCard({
           >
             <FontAwesomeIcon
               icon={faClose}
-              className="text-white absolute top-3 right-3 z-20"
+              className="absolute right-3 top-3 z-20 text-white"
             />
           </button>
         )}
