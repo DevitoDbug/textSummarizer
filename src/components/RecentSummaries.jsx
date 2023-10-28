@@ -11,7 +11,6 @@ const RecentSummaries = () => {
     <div className="mt-8 flex w-full flex-col items-center justify-center">
       <div className="fixed top-0 z-30 flex w-full flex-row justify-between bg-C_TextWhite px-2 py-3 shadow-md">
         <span className="text-lg">Recent summeries</span>
-        {/* <span className="text-sm self-end text-C_Blue">View all </span> */}
       </div>
       <div className="mt-5 w-[90%] overflow-scroll pb-40">
         {data.map((data, index) => (
