@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import SummaryCard from './SummaryCard';
-import dummyData from '../data';
+import { SummeryDataContext } from '../context/SummeryCardContext';
 
 const RecentSummaries = () => {
+  const { data } = useContext(SummeryDataContext);
+
   const [activePane, setActivePane] = useState(-1);
 
   return (
@@ -12,7 +14,7 @@ const RecentSummaries = () => {
         {/* <span className="text-sm self-end text-C_Blue">View all </span> */}
       </div>
       <div className="mt-5 w-[90%] overflow-scroll pb-40">
-        {dummyData.map((data, index) => (
+        {data.map((data, index) => (
           <SummaryCard
             key={index}
             size={data.size}

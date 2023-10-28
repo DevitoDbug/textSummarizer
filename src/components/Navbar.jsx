@@ -54,7 +54,6 @@ const Navbar = () => {
             onClick={() => {
               setActive(index);
               navigate(icon.path);
-              console.log(index);
             }}
             className={`flex items-center justify-center ${icon.className} ${
               active === index

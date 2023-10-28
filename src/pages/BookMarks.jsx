@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SummaryCard from '../components/SummaryCard';
-import dummyData from '../data';
 import { useState } from 'react';
+import { SummeryDataContext } from '../context/SummeryCardContext';
 
 const BookMarks = () => {
   const [activePane, setActivePane] = useState(-1);
+
+  const { data } = useContext(SummeryDataContext);
 
   return (
     <div className="mt-8 flex h-full w-full flex-col items-center ">
@@ -13,7 +15,7 @@ const BookMarks = () => {
         {/* <span className="text-sm self-end text-C_Blue">View all </span> */}
       </div>
       <div className="mt-5 w-[90%] overflow-scroll pb-40">
-        {dummyData.map(
+        {data.map(
           (data, index) =>
             data.bookmarked && (
               <SummaryCard
