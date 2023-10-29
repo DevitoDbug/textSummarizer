@@ -45,7 +45,7 @@ const Navbar = () => {
       },
     ],
     [],
-  ); // Empty dependency array, as the navIcons array is constant
+  );
 
   useEffect(() => {
     const activeIndex = navIcons.findIndex(
