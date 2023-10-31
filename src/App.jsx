@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './pages/Login';
+import Home from './pages/Home';
 import './styles/navbar.scss';
 import Summeries from './pages/Summeries';
 import BookMarks from './pages/BookMarks';
@@ -12,7 +12,7 @@ const App = () => {
       <SummeryDataContextProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Home />} />
             <Route path="/summeries" element={<Summeries />} />
             <Route path="/bookmarks" element={<BookMarks />} />
             <Route path="/chatapp" element={<ChatApp />} />

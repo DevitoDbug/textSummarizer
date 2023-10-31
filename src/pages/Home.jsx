@@ -1,45 +1,45 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
-import fileUpload from "../../public/file.svg";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+import fileUpload from '../../public/file.svg';
 const Home = () => {
   return (
-    <div className="h-[100svh] w-full font-poppin flex flex-col">
+    <div className="flex h-[100svh] w-full flex-col font-poppin">
       <div className="h-[20%] px-8 pt-8">
-        <div className="text-2xl px-1 font-medium flex gap-2 justify-between ">
+        <div className="flex justify-between gap-2 px-1 text-2xl font-medium ">
           <div>
             Text<span className="text-C_Blue ">Quill</span>
           </div>
           <div>
-            <button className="w-6 h-6 rounded-full flex items-center justify-center bg-white border border-C_DullBlack">
+            <button className="flex h-6 w-6 items-center justify-center rounded-full border border-C_DullBlack bg-white">
               <FontAwesomeIcon
                 icon={faUser}
-                className="stroke-C_DullBlack stroke-[25] text-white text-xs  rounded-full p-2"
+                className="rounded-full stroke-C_DullBlack stroke-[25] p-2  text-xs text-white"
               />
             </button>
           </div>
         </div>
-        <div className="mt-4 flex justify-between border rounded-xl shadow-md p-3 text-sm text-C_TextWhiteDull border-C_WhiteGray ">
+        <div className="mt-4 flex justify-between rounded-xl border border-C_WhiteGray p-3 text-sm text-C_TextWhiteDull shadow-md ">
           <input
             type="text"
             placeholder="Previous Summeries..."
-            className="bg-transparent w-3/4 border-none outline-none text-C_DullBlack"
+            className="w-3/4 border-none bg-transparent text-C_DullBlack outline-none"
           />
           <FontAwesomeIcon icon={faSearch} />
         </div>
       </div>
 
-      <div className="h-[70%] flex flex-col items-center ">
-        <div className=" border-2 px-20 py-9 mt-9 border-dashed">
+      <div className="flex h-[70%] flex-col items-center ">
+        <div className=" mt-9 border-2 border-dashed px-20 py-9">
           <img src={fileUpload} alt="Upload File" />
         </div>
-        <div className="flex flex-col mx-8 text-center text-C_GreyBlue">
+        <div className="mx-8 flex flex-col text-center text-C_GreyBlue">
           <span className=" text-3xl font-medium tracking-tighter">
             Drop file
           </span>
-          <span className="text-xs px-6 flex flex-col">
-            Oops! There are no documents selected{" "}
-            <span className="text-C_Blue">Choose from files</span>
+          <span className="flex flex-col px-6 text-xs">
+            Oops! There are no documents selected{' '}
+            <span className="text-C_Blue">Upload file</span>
           </span>
         </div>
       </div>
