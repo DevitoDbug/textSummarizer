@@ -58,9 +58,9 @@ const Register = () => {
               console.log(e);
             }
 
+            //adding the user to the files collection
             try {
-              await setDoc(doc(db, 'userChats', res.user.uid), {});
-
+              await setDoc(doc(db, 'Files', res.user.uid), {});
               // Navigate to the home page after creating the userChat document
               navigate('/');
             } catch (e) {
@@ -76,35 +76,35 @@ const Register = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-C_LightBlue flex h-full w-full flex-col  items-center justify-center gap-3 text-lg md:h-[50%] md:w-[60%] md:gap-3 md:rounded-xl md:shadow-xl  lg:h-[70%] lg:w-[30%] "
+      className="flex h-full w-full flex-col items-center  justify-center gap-3 bg-C_Blue text-lg md:h-[50%] md:w-[60%] md:gap-3 md:rounded-xl md:shadow-xl  lg:h-[70%] lg:w-[30%] "
     >
-      <h2 className="text-C_TextBlack text-xl md:text-2xl lg:text-lg">
+      <h2 className="text-xl text-C_GreyBlue md:text-2xl lg:text-lg">
         Register
       </h2>
       <input
         onChange={() => setIsTyping(true)}
-        className="outline-C_DarkBlue w-[70%] rounded-md p-3 md:w-[80%] md:text-2xl lg:p-2 lg:text-lg"
+        className="w-[70%] rounded-md p-3 outline-C_Blue md:w-[80%] md:text-2xl lg:p-2 lg:text-lg"
         type="text"
         placeholder="First Name"
         name="id"
       />
       <input
         onChange={() => setIsTyping(true)}
-        className="outline-C_DarkBlue w-[70%] rounded-md p-3 md:w-[80%] md:text-2xl lg:p-2 lg:text-lg"
+        className="w-[70%] rounded-md p-3 outline-C_Blue md:w-[80%] md:text-2xl lg:p-2 lg:text-lg"
         type="text"
         placeholder="Last Name"
         name="id"
       />
       <input
         onChange={() => setIsTyping(true)}
-        className="outline-C_DarkBlue w-[70%] rounded-md p-3 md:w-[80%] md:text-2xl lg:p-2 lg:text-lg"
+        className="w-[70%] rounded-md p-3 outline-C_Blue md:w-[80%] md:text-2xl lg:p-2 lg:text-lg"
         type="text"
         placeholder="Email"
         name="id"
       />
       <input
         onChange={() => setIsTyping(true)}
-        className="outline-C_DarkBlue w-[70%] rounded-md p-3 md:w-[80%] md:text-2xl lg:p-2 lg:text-lg"
+        className="w-[70%] rounded-md p-3 outline-C_Blue md:w-[80%] md:text-2xl lg:p-2 lg:text-lg"
         type="password"
         placeholder="Password"
         name="id"
@@ -122,17 +122,20 @@ const Register = () => {
       >
         <FontAwesomeIcon
           icon={faImage}
-          className="text-C_DarkBlue p-1 text-[150%]"
+          className="p-1 text-[150%] text-C_Blue"
         />
-        <span className="text-C_TextBlack text-[80%]">Add profile pic</span>
+        <span className="text-[80%] text-C_DullBlack">Add profile pic</span>
       </label>
 
-      <button className="bg-C_DarkBlue rounded-xl px-3 py-2 text-2xl text-C_TextWhite shadow-lg md:mt-3 md:text-3xl lg:mt-3 lg:text-xl">
+      <button className="rounded-xl bg-C_Blue px-3 py-2 text-2xl text-C_TextWhite shadow-lg md:mt-3 md:text-3xl lg:mt-3 lg:text-xl">
         Register
       </button>
       <div className="text-sm">
         You have an account?
-        <Link className="text-C_DarkBlue  ml-1 text-sm font-bold" to={'/login'}>
+        <Link
+          className="ml-1  text-sm font-bold text-C_DullBlack"
+          to={'/login'}
+        >
           Log in
         </Link>
       </div>
