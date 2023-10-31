@@ -31,7 +31,7 @@ const Login = () => {
     try {
       // await signInWithEmailAndPassword(auth, email, password);
       setEror('');
-      navigate('/');
+      //navigate('/');
     } catch (e) {
       setEror(e);
       console.log(e);
@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex h-full w-full flex-col items-center  justify-center gap-3 bg-C_Blue text-lg md:h-[40%] md:w-[60%] md:gap-3 md:rounded-xl md:shadow-xl lg:h-[60%] lg:w-[30%]"
+      className="flex h-full w-full flex-col items-center  justify-center gap-3 bg-C_WhiteGray text-lg md:h-[40%] md:w-[60%] md:gap-3 md:rounded-xl md:shadow-xl lg:h-[60%] lg:w-[30%]"
     >
       <h2 className="text-xl text-C_Black md:text-2xl lg:text-lg">Login</h2>
       <input

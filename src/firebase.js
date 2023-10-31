@@ -1,4 +1,8 @@
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getStorage } from 'firebase/storage';
+import { getFirestore } from 'firebase/firestore';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDN23ZrLYxbPrdOo98T_jAZ7uhyEDRaO1o',
   authDomain: 'textquill.firebaseapp.com',
@@ -9,6 +13,6 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-export const auth = app.auth();
-export const db = app.firestore();
-export const storage = app.storage();
+export const auth = getAuth();
+export const storage = getStorage();
+export const db = getFirestore();

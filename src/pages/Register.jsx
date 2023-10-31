@@ -76,7 +76,7 @@ const Register = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex h-full w-full flex-col items-center  justify-center gap-3 bg-C_Blue text-lg md:h-[50%] md:w-[60%] md:gap-3 md:rounded-xl md:shadow-xl  lg:h-[70%] lg:w-[30%] "
+      className="flex h-full w-full flex-col items-center  justify-center gap-3 bg-C_WhiteGray text-lg md:h-[50%] md:w-[60%] md:gap-3 md:rounded-xl md:shadow-xl  lg:h-[70%] lg:w-[30%] "
     >
       <h2 className="text-xl text-C_GreyBlue md:text-2xl lg:text-lg">
         Register
