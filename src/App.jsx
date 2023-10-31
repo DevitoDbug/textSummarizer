@@ -13,9 +13,9 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="summeries" element={<Summeries />} />
-            <Route path="bookmarks" element={<BookMarks />} />
-            <Route path="chatapp" element={<ChatApp />} />
+            <Route path="/summeries" element={<Summeries />} />
+            <Route path="/bookmarks" element={<BookMarks />} />
+            <Route path="/chatapp" element={<ChatApp />} />
           </Routes>
           <div className="sticky bottom-0">
             <Navbar />
