@@ -3,6 +3,57 @@ import React, { useState } from 'react';
 const ChatApp = () => {
   const [inputText, setInputText] = useState('');
   const [summery, setSummery] = useState('');
+  const [options, setOptions] = useState([]);
+  const [selectedOptionsId, setSelectedOptionsId] = useState(0);
+
+  //buttons
+  const buttons = [
+    {
+      id: 1,
+      name: 'Length',
+      value: 'length',
+      onClick: () => {
+        setOptions(['short', 'medium', 'long']);
+        setSelectedOptionsId(1);
+      },
+    },
+
+    {
+      id: 2,
+      name: 'Format',
+      value: 'format',
+      onClick: () => {
+        setOptions(['paragraph', 'sentence']);
+        setSelectedOptionsId(2);
+      },
+    },
+
+    {
+      id: 3,
+      name: 'Precision',
+      value: 'extractiveness',
+      onClick: () => {
+        setOptions(['low', 'medium', 'high', 'auto']);
+        setSelectedOptionsId(3);
+      },
+    },
+
+    {
+      id: 4,
+      name: 'Creativity',
+      value: 'temperature',
+      onClick: () => {
+        setOptions([0.0, 1.0, 0.3]);
+        setSelectedOptionsId(4);
+      },
+    },
+  ];
+
+  //request data
+  const [length, setLength] = useState('medium'); // ['short', 'medium', 'long']
+  const [format, setFormat] = useState('paragraph'); // ['paragraph', 'sentence']
+  const [extractiveness, setExtractiveness] = useState('low'); // ['low', 'medium', 'high']
+  const [temperature, setTemperature] = useState(0.3); // [0.0, 1.0]
 
   // Define the request parameters
   const apiUrl = 'https://api.cohere.ai/v1/summarize';
@@ -13,10 +64,10 @@ const ChatApp = () => {
   };
 
   const requestData = {
-    length: 'medium',
-    format: 'paragraph',
-    extractiveness: 'low',
-    temperature: 0.3,
+    length: length,
+    format: format,
+    extractiveness: extractiveness,
+    temperature: temperature,
     text: inputText,
   };
 
@@ -47,7 +98,7 @@ const ChatApp = () => {
   };
 
   return (
-    <div className="flex h-full flex-col gap-2">
+    <div className="bg-C_DullWhite flex h-full flex-col gap-2 p-2">
       <form className="flex flex-col gap-2 p-1">
         <textarea
           className="rounded-lg border border-C_GreyBlue p-1"
@@ -66,8 +117,69 @@ const ChatApp = () => {
         </button>
       </form>
 
-      <div className="summery">
+      <div className="rounded-lg bg-white p-2 shadow-md">
         <p>{summery}</p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae
+        ipsum omnis dolorum sapiente. Iusto ipsam nemo quasi deserunt sunt
+        excepturi id? Iste quis et nisi eum suscipit pariatur totam temporibus.
+        <div className="mt-3 flex justify-end gap-2">
+          {buttons.map((button) => (
+            <div key={button.id}>
+              <button
+                onClick={button.onClick}
+                className="rounded-md border-2  border-gray-300 px-3 py-1 text-sm  text-C_TextWhiteDull hover:bg-blue-700"
+              >
+                {button.name}
+              </button>
+              <div
+                className={`mt-4 flex  flex-col  ${
+                  selectedOptionsId ? 'block' : 'hidden'
+                }`}
+              >
+                {button.id === selectedOptionsId &&
+                  options.map((option) => (
+                    <div
+                      key={option}
+                      className="flex items-center gap-4 text-left text-sm text-C_TextWhiteDull"
+                    >
+                      <input
+                        type="radio"
+                        id={option}
+                        name="optionsGroup"
+                        value={option}
+                        checked={length === option} // Replace "length" with the corresponding state for each option
+                        onChange={(e) => {
+                          switch (selectedOptionsId) {
+                            case 1:
+                              setLength(e.target.value);
+                              break;
+                            case 2:
+                              setFormat(e.target.value);
+                              break;
+                            case 3:
+                              setExtractiveness(e.target.value);
+                              break;
+                            case 4:
+                              setTemperature(e.target.value);
+                              break;
+                            default:
+                              break;
+                          }
+                          setSelectedOptionsId(0);
+                        }}
+                      />
+                      <label
+                        htmlFor={option}
+                        className="cursor-pointer hover:bg-blue-700"
+                      >
+                        {option}
+                      </label>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
