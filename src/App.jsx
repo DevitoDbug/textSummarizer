@@ -6,21 +6,24 @@ import BookMarks from './pages/BookMarks';
 import ChatApp from './pages/ChatApp';
 import Navbar from './components/Navbar';
 import SummeryDataContextProvider from './context/SummeryCardContext';
+import RequestParameterContextProvider from './context/RequestParameterContext';
 const App = () => {
   return (
     <div className=" h-screen w-screen bg-C_GreyShades ">
       <SummeryDataContextProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/summeries" element={<Summeries />} />
-            <Route path="/bookmarks" element={<BookMarks />} />
-            <Route path="/chatapp" element={<ChatApp />} />
-          </Routes>
-          <div className="sticky bottom-0">
-            <Navbar />
-          </div>
-        </BrowserRouter>
+        <RequestParameterContextProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/summeries" element={<Summeries />} />
+              <Route path="/bookmarks" element={<BookMarks />} />
+              <Route path="/chatapp" element={<ChatApp />} />
+            </Routes>
+            <div className="sticky bottom-0">
+              <Navbar />
+            </div>
+          </BrowserRouter>
+        </RequestParameterContextProvider>
       </SummeryDataContextProvider>
     </div>
   );

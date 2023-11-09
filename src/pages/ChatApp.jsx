@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { RequestParameterContext } from '../context/RequestParameterContext';
 
 const ChatApp = () => {
   const [inputText, setInputText] = useState('');
@@ -50,10 +51,7 @@ const ChatApp = () => {
   ];
 
   //request data
-  const [length, setLength] = useState('medium'); // ['short', 'medium', 'long']
-  const [format, setFormat] = useState('paragraph'); // ['paragraph', 'sentence']
-  const [extractiveness, setExtractiveness] = useState('low'); // ['low', 'medium', 'high']
-  const [temperature, setTemperature] = useState(0.3); // [0.0, 1.0]
+  const contextValue_RequestParameters = useContext(RequestParameterContext);
 
   // Define the request parameters
   const apiUrl = 'https://api.cohere.ai/v1/summarize';
@@ -64,10 +62,10 @@ const ChatApp = () => {
   };
 
   const requestData = {
-    length: length,
-    format: format,
-    extractiveness: extractiveness,
-    temperature: temperature,
+    length: contextValue_RequestParameters.length,
+    format: contextValue_RequestParameters.format,
+    extractiveness: contextValue_RequestParameters.extractiveness,
+    temperature: contextValue_RequestParameters.temperature,
     text: inputText,
   };
 
