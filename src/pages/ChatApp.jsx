@@ -117,17 +117,18 @@ const ChatApp = () => {
         </button>
       </form>
 
-      <div className="rounded-lg bg-white p-2 shadow-md">
+      <div className="rounded-lg bg-white p-2 text-C_TextWhiteDull shadow-md">
         <p>{summery}</p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae
         ipsum omnis dolorum sapiente. Iusto ipsam nemo quasi deserunt sunt
         excepturi id? Iste quis et nisi eum suscipit pariatur totam temporibus.
-        <div className="mt-3 flex justify-end gap-2">
+        <div className="mt-3 text-C_Black">Modify response</div>
+        <div className="flex justify-end gap-2 ">
           {buttons.map((button) => (
             <div key={button.id}>
               <button
                 onClick={button.onClick}
-                className="rounded-md border-2  border-gray-300 px-3 py-1 text-sm  text-C_TextWhiteDull hover:bg-blue-700"
+                className="rounded-md border-2  border-gray-300 px-3 py-1 text-sm  text-C_TextWhiteDull hover:bg-C_Blue hover:text-white"
               >
                 {button.name}
               </button>
@@ -140,41 +141,8 @@ const ChatApp = () => {
                   options.map((option) => (
                     <div
                       key={option}
-                      className="flex items-center gap-4 text-left text-sm text-C_TextWhiteDull"
-                    >
-                      <input
-                        type="radio"
-                        id={option}
-                        name="optionsGroup"
-                        value={option}
-                        checked={length === option} // Replace "length" with the corresponding state for each option
-                        onChange={(e) => {
-                          switch (selectedOptionsId) {
-                            case 1:
-                              setLength(e.target.value);
-                              break;
-                            case 2:
-                              setFormat(e.target.value);
-                              break;
-                            case 3:
-                              setExtractiveness(e.target.value);
-                              break;
-                            case 4:
-                              setTemperature(e.target.value);
-                              break;
-                            default:
-                              break;
-                          }
-                          setSelectedOptionsId(0);
-                        }}
-                      />
-                      <label
-                        htmlFor={option}
-                        className="cursor-pointer hover:bg-blue-700"
-                      >
-                        {option}
-                      </label>
-                    </div>
+                      className="flex items-center gap-1 text-left  text-sm text-C_TextWhiteDull"
+                    ></div>
                   ))}
               </div>
             </div>
