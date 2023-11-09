@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { RequestParameterContext } from '../context/RequestParameterContext';
+import ResponseModifierOptions from '../components/ResponseModifierOptions';
 
 const ChatApp = () => {
   const [inputText, setInputText] = useState('');
@@ -123,26 +124,14 @@ const ChatApp = () => {
         <div className="mt-3 text-C_Black">Modify response</div>
         <div className="flex justify-end gap-2 ">
           {buttons.map((button) => (
-            <div key={button.id}>
+            <div className="relative" key={button.id}>
               <button
                 onClick={button.onClick}
                 className="rounded-md border-2  border-gray-300 px-3 py-1 text-sm  text-C_TextWhiteDull hover:bg-C_Blue hover:text-white"
               >
                 {button.name}
               </button>
-              <div
-                className={`mt-4 flex  flex-col  ${
-                  selectedOptionsId ? 'block' : 'hidden'
-                }`}
-              >
-                {button.id === selectedOptionsId &&
-                  options.map((option) => (
-                    <div
-                      key={option}
-                      className="flex items-center gap-1 text-left  text-sm text-C_TextWhiteDull"
-                    ></div>
-                  ))}
-              </div>
+              {selectedOptionsId === button.id && <ResponseModifierOptions />}
             </div>
           ))}
         </div>
