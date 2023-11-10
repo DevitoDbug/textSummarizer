@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { RequestParameterContext } from '../context/RequestParameterContext';
 import ResponseModifierOptions from '../components/ResponseModifierOptions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,6 +9,9 @@ const ChatApp = () => {
   const [summery, setSummery] = useState('');
   const [options, setOptions] = useState([]);
   const [regenerate, setRegenerate] = useState(false); //for re-rendering the respnse
+
+  const [optionsVisible, setOptionsVisible] = useState(false);
+  const componentRef = useRef(null);
 
   //request data
   const contextValue_RequestParameters = useContext(RequestParameterContext);
@@ -75,6 +78,7 @@ const ChatApp = () => {
   const handleOptionClick = (onClick) => {
     onClick();
     setRegenerate(true);
+    setOptionsVisible(true);
   };
 
   const handleClick = async (e) => {
@@ -100,7 +104,36 @@ const ChatApp = () => {
       // Handle any errors here
       console.error('Error:', error);
     }
+    setRegenerate(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        componentRef.current &&
+        !componentRef.current.contains(event.target)
+      ) {
+        // Clicked outside the component
+        setOptionsVisible(false);
+      }
+    };
+
+    const handleScroll = () => {
+      // Scrolling occurred
+      setOptionsVisible(false);
+    };
+
+    // Attach event listeners when the component mounts
+    document.addEventListener('click', handleClickOutside);
+    window.addEventListener('scroll', handleScroll);
+
+    // Detach event listeners when the component unmounts
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  console.log(optionsVisible);
 
   return (
     <div className="h-full w-full overflow-hidden p-1">
@@ -140,19 +173,25 @@ const ChatApp = () => {
               />
             </button>
           </div>
-          <div className="flex justify-center gap-2 ">
+          <div ref={componentRef} className="flex justify-center gap-2 ">
             {buttons.map((button) => (
               <div className="relative" key={button.id}>
                 <button
                   onClick={() => {
                     handleOptionClick(button.onClick);
+                    setOptionsVisible(true);
                   }}
                   className="rounded-md border-2  border-gray-300 px-3 py-1 text-sm  text-C_TextWhiteDull hover:bg-C_Blue hover:text-white"
                 >
                   {button.name}
                 </button>
-                {contextValue_RequestParameters.selectedOption ===
-                  button.value && <ResponseModifierOptions options={options} />}
+                {optionsVisible &&
+                  contextValue_RequestParameters.selectedOption ===
+                    button.value && (
+                    <div>
+                      <ResponseModifierOptions options={options} />
+                    </div>
+                  )}
               </div>
             ))}
           </div>
