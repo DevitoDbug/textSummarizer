@@ -93,26 +93,30 @@ const ChatApp = () => {
 
   const fetchSummery = async () => {
     setLoading(true);
-    try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: headers,
-        body: JSON.stringify(requestData),
-      });
-      console.log(requestData);
+    if (requestData.text === '' || requestData.text === undefined) {
+      return;
+    } else {
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: headers,
+          body: JSON.stringify(requestData),
+        });
+        console.log(requestData);
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+        // Handle the response data here
+        setSummery(data.summary);
+      } catch (error) {
+        // Handle any errors here
+        console.error('Error:', error);
+      } finally {
+        setLoading(false);
       }
-
-      const data = await response.json();
-      // Handle the response data here
-      setSummery(data.summary);
-    } catch (error) {
-      // Handle any errors here
-      console.error('Error:', error);
-    } finally {
-      setLoading(false);
     }
     setRegenerate(false);
   };
@@ -149,7 +153,7 @@ const ChatApp = () => {
       <div className="flex h-full w-full flex-col gap-2 p-2">
         <form className="flex flex-col gap-2 p-1">
           <textarea
-            className="rounded-lg border border-C_GreyBlue p-1"
+            className="rounded-lg border-2  p-2 outline-none"
             type="text"
             name="inputText"
             id="inputText"
