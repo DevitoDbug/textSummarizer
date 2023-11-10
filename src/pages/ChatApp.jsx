@@ -133,11 +133,10 @@ const ChatApp = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  console.log(optionsVisible);
 
   return (
     <div className="h-full w-full overflow-hidden p-1">
-      <div className="flex h-full w-full flex-col gap-2 bg-C_WhiteGray p-2">
+      <div className="flex h-full w-full flex-col gap-2 bg-white p-2">
         <form className="flex flex-col gap-2 p-1">
           <textarea
             className="rounded-lg border border-C_GreyBlue p-1"

@@ -1,0 +1,263 @@
+[33mcommit a997f447d13e732460d8d09c407a87465885ed9a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Nov 10 14:09:48 2023 +0300
+
+    refactor: Improve code clarity and fix useRef usage in ChatApp component
+
+[33mcommit 49a3c722ede83aba3b374655fb0417f72e33e725[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Nov 10 13:35:24 2023 +0300
+
+    fix: Fixed so many bugs my head hurts
+
+[33mcommit 17de9297508f30caec1666c5630154af486b86ab[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Thu Nov 9 11:06:27 2023 +0300
+
+    feat: Render Response Modifier Options Component
+
+[33mcommit 1a062887fa60f62de0cdf4ec819d5c97ebbf7e4a[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Thu Nov 9 10:43:21 2023 +0300
+
+    fix: Implement proper useContext usage for RequestParameterContext
+
+[33mcommit 7ad8b17a9e95f27c3d948752b03728f5236d5319[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Thu Nov 9 10:07:58 2023 +0300
+
+    chore: Simplify the response UI for improved clarity
+
+[33mcommit 8e3c202bab71ae0e7fdac8d0f0309a1279594d2b[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Wed Nov 8 23:16:00 2023 +0300
+
+    feat: Implement radio button options for selecting API parameters
+
+[33mcommit 2fd9990547187ff0ae012d3e303b1b4f58d2a0d9[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Wed Nov 8 20:00:13 2023 +0300
+
+    feat: Add UI for sending API requests and displaying summarized text
+
+[33mcommit 568fa3230e84306fd8ccb37de38e7dcfd0dbbe58[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Tue Oct 31 10:12:36 2023 +0300
+
+    fix: fix bug
+
+[33mcommit b2f91d30e208b860a3cf2ab18dcf54fb84624d1b[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Tue Oct 31 09:56:09 2023 +0300
+
+    Reorganize files: firebase.js, login.jsx, register.jsx, and apply UI changes
+
+[33mcommit fc212a6c77d9a000ecf1bb2184ba80acb937b6b1[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Tue Oct 31 09:37:26 2023 +0300
+
+    Style modifications in login page: Refine styling
+
+[33mcommit 4bc0dadc13de5aef2301fd6cd9f1e00f6e0bbbb7[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Tue Oct 31 09:28:05 2023 +0300
+
+    Modify registration page: Update Firebase document names
+
+[33mcommit 4ff5448791f9ac97f8fc3205b8dd40db2ed4813e[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Tue Oct 31 07:53:09 2023 +0300
+
+    Setup Firebase : Storage, Authentication, and Firestore
+
+[33mcommit b41647026c00026753c6a3f4dd6cbb739ba7c68a[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Tue Oct 31 07:40:07 2023 +0300
+
+    feat: Add login page
+
+[33mcommit d234cdae3197d34e096ca35db5b126d003160df6[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Tue Oct 31 07:38:05 2023 +0300
+
+    feat: Add registration page
+
+[33mcommit 94cb287c31cc6e9deeb4bf8decc155c231f75cf8[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Tue Oct 31 07:33:05 2023 +0300
+
+    fix: Fix routing issues for Vercel deployment
+
+[33mcommit 713d1548578611a426ee74aead2d5ac4297f5bde[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Tue Oct 31 07:22:57 2023 +0300
+
+    fix: Fix routing issues for Vercel deployment
+
+[33mcommit a099d53e4d5e6e877aa9ed9647449cf9656b4247[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Sun Oct 29 22:05:52 2023 +0300
+
+    feat: Setting up firebase
+
+[33mcommit 6aff44cdac9df7dea42f56b8d3c38b8080b067c1[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Sun Oct 29 22:00:32 2023 +0300
+
+    feat: Setting up firebase
+
+[33mcommit 7f9ebc3a407d9d40f75f922133f455cb9198b2f2[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Sat Oct 28 12:41:26 2023 +0300
+
+    Refactor: Optimize Navbar component performance and resolve dependency warning
+
+[33mcommit 35ce18034f4d4c0ff97d85c3b9f70b968a16d854[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Sat Oct 28 11:51:42 2023 +0300
+
+    feat: Improve data loading using context for enhanced state management
+
+[33mcommit ae552ddc028b1e524bebb2ec59445992de7575ca[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Sat Oct 28 10:41:11 2023 +0300
+
+    feat: Implement bookmark functionality with UI and conditional rendering
+
+[33mcommit 1191ac65eb9d4f50bc2bd6aacdc6addd8421a1f1[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Sat Oct 28 09:22:26 2023 +0300
+
+    refactor: Improve Tailwind CSS code formatting
+
+[33mcommit dfc4521dafbdcbfe3454221ba11648a04961ea9d[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Sat Oct 28 09:00:54 2023 +0300
+
+    feat: Implement routing and design updates
+
+[33mcommit 55d31737f8254d7da39faf059551ea923b6aa53f[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Sat Oct 28 07:46:02 2023 +0300
+
+    fix: Fix some bugs
+
+[33mcommit 1d3ff5fc48b4b4320404e9f4b4c0fafb610e5c18[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 20:23:32 2023 +0300
+
+    feat: Change aesthetic view of the Summary page
+
+[33mcommit 7b10a8ccc34139857cf59aa1d127a73e81c1efc3[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 20:04:01 2023 +0300
+
+    feat: Linked Options component to the vertical ellipse menu
+
+[33mcommit 4aea564031044f2f7e744c4e278f86aeb0cc0faf[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 14:45:51 2023 +0300
+
+    feat: Added summary section to the UI
+
+[33mcommit 745d2e1a79b222cfcd7942b51e303aa11f1c132d[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 13:56:17 2023 +0300
+
+    few changes
+
+[33mcommit 43fefba5a593ffbcb021b13c2c73ba230adfa13a[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 13:44:49 2023 +0300
+
+    style: Enhanced UI elements and aesthetics for the homepage
+
+[33mcommit fa87a1423e5d6027473f1ed66cfc5ef3c6188606[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 13:39:34 2023 +0300
+
+    fix: Resolved screen height bug
+
+[33mcommit 5478519cd3c47f9ee16152d926aa2ce9223a9b3a[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 13:39:27 2023 +0300
+
+    fix: Resolved screen height bug
+
+[33mcommit 7d2fa23805631d6e5eb00bc2bf942fb9469a5331[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 13:35:43 2023 +0300
+
+    fix: Resolved screen height bug
+
+[33mcommit 068ace84c5c920d4a80201d30cbc8ebb9a0411cf[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 13:33:09 2023 +0300
+
+    fix: Resolved screen height bug
+
+[33mcommit 8adb1b22a5855df483a53e7ec1a88c7025da0f47[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 13:24:47 2023 +0300
+
+    fix: Change icon to visible size
+
+[33mcommit 81aefb1a545d9cfcbf106190cf70d1dcc06e6c57[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 13:16:04 2023 +0300
+
+    fix: Change icon to visible size
+
+[33mcommit b02ef05c86d4a73d88a2ca23e6ab28a278a945f5[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 13:13:59 2023 +0300
+
+    fix: Resolved mobile screen visibility issue with -webkit-fill-available
+
+[33mcommit 66534cf390d837e0af087893a93fc12efd16879f[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 11:53:29 2023 +0300
+
+    style: Enhanced UI elements and aesthetics for the navbar
+
+[33mcommit 6ce921d9d7ffdf1ad173cf8fd0c88461dc3b1332[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 10:37:45 2023 +0300
+
+    feat: Added click animation for icons
+
+[33mcommit 63e5e216c73304ae88baab78bd8a0553c4f9d8a7[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 10:26:55 2023 +0300
+
+    Refactored navigation icons: Improved organization and code reusability.
+
+[33mcommit 9742be916e94b05cb2845b00b7a637307fad3f70[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 01:27:29 2023 +0300
+
+    UI: Finish Navbar design
+
+[33mcommit 38a7b294272d88a6817537da5218aa9e8b01d804[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Fri Oct 27 00:58:11 2023 +0300
+
+    UI: Add profile icon, brand name, and search input to home page
+
+[33mcommit dff6375fc197acd9ff822baab99e753a5f40ad1b[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Thu Oct 26 18:11:17 2023 +0300
+
+    feat: Add Search UI and brand Name
+
+[33mcommit 34aafaaa0a17972c2a6ff8adbf50388f9b316fa1[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Thu Oct 26 17:02:35 2023 +0300
+
+    initial commit
+
+[33mcommit a817ea9a60819c4265a3fa6d319f6491d1f4ec6e[m
+Author: devitoDbug <davidOchiengy@gmail.com>
+Date:   Thu Oct 26 10:46:08 2023 +0300
+
+    initial commit
