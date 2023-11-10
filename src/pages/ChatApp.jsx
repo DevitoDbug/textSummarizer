@@ -136,7 +136,7 @@ const ChatApp = () => {
 
   return (
     <div className="h-full w-full overflow-hidden p-1">
-      <div className="flex h-full w-full flex-col gap-2 bg-white p-2">
+      <div className="flex h-full w-full flex-col gap-2 p-2">
         <form className="flex flex-col gap-2 p-1">
           <textarea
             className="rounded-lg border border-C_GreyBlue p-1"
@@ -155,7 +155,7 @@ const ChatApp = () => {
           </button>
         </form>
 
-        <div className="rounded-lg bg-white p-2 text-C_TextWhiteDull shadow-md">
+        <div className="rounded-lg bg-C_White p-2 text-C_TextWhiteDull shadow-md">
           <p>{summery}</p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae
           ipsum omnis dolorum sapiente. Iusto ipsam nemo quasi deserunt sunt
