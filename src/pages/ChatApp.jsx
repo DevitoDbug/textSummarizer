@@ -3,6 +3,7 @@ import { RequestParameterContext } from '../context/RequestParameterContext';
 import ResponseModifierOptions from '../components/ResponseModifierOptions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
+import DownloadPDF from '../components/DownloadPDF';
 
 const ChatApp = () => {
   const [inputText, setInputText] = useState('');
@@ -164,7 +165,7 @@ const ChatApp = () => {
           />
           <button
             onClick={handleClick}
-            className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+            className="rounded bg-C_Blue px-4 py-2 font-bold text-white hover:bg-blue-500"
           >
             Generate summery
           </button>
@@ -205,6 +206,9 @@ const ChatApp = () => {
                   )}
               </div>
             ))}
+          </div>
+          <div className="mt-5">
+            <DownloadPDF />
           </div>
         </div>
       </div>
