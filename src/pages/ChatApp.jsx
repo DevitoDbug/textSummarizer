@@ -153,13 +153,14 @@ const ChatApp = () => {
       <div className="flex h-full w-full flex-col gap-2 p-2">
         <form className="flex flex-col gap-2 p-1">
           <textarea
-            className="rounded-lg border-2  p-2 outline-none"
+            className="rounded-lg outline-none"
             type="text"
             name="inputText"
             id="inputText"
             placeholder="Enter text..."
             onChange={(e) => setInputText(e.target.value)}
             value={inputText}
+            rows={10}
           />
           <button
             onClick={handleClick}
