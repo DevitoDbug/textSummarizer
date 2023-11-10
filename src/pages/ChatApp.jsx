@@ -13,6 +13,8 @@ const ChatApp = () => {
   const [optionsVisible, setOptionsVisible] = useState(false);
   const componentRef = useRef(null);
 
+  const [loading, setLoading] = useState(false);
+
   //request data
   const contextValue_RequestParameters = useContext(RequestParameterContext);
 
@@ -23,7 +25,7 @@ const ChatApp = () => {
       name: 'Length',
       value: 'length',
       onClick: () => {
-        setOptions(['short', 'medium', 'long']);
+        setOptions(['short', 'medium', 'long', 'auto']);
         contextValue_RequestParameters.setSelectedOption(`length`);
       },
     },
@@ -33,7 +35,7 @@ const ChatApp = () => {
       name: 'Format',
       value: 'format',
       onClick: () => {
-        setOptions(['paragraph', 'sentence']);
+        setOptions(['paragraph', 'bullets', 'auto']);
         contextValue_RequestParameters.setSelectedOption(`format`);
       },
     },
@@ -53,7 +55,7 @@ const ChatApp = () => {
       name: 'Creativity',
       value: 'temperature',
       onClick: () => {
-        setOptions([0.0, 1.0, 0.3]);
+        setOptions([0.0, 0.3, 1.0]);
         contextValue_RequestParameters.setSelectedOption('temperature');
       },
     },
@@ -86,12 +88,18 @@ const ChatApp = () => {
     setInputText(e.target.form[0].value);
     e.target.form[0].value = '';
 
+    fetchSummery();
+  };
+
+  const fetchSummery = async () => {
+    setLoading(true);
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: headers,
         body: JSON.stringify(requestData),
       });
+      console.log(requestData);
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -103,6 +111,8 @@ const ChatApp = () => {
     } catch (error) {
       // Handle any errors here
       console.error('Error:', error);
+    } finally {
+      setLoading(false);
     }
     setRegenerate(false);
   };
@@ -156,14 +166,11 @@ const ChatApp = () => {
         </form>
 
         <div className="rounded-lg bg-C_White p-2 text-C_TextWhiteDull shadow-md">
-          <p>{summery}</p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae
-          ipsum omnis dolorum sapiente. Iusto ipsam nemo quasi deserunt sunt
-          excepturi id? Iste quis et nisi eum suscipit pariatur totam
-          temporibus.
+          {loading && <div className="text-center">Loading...</div>}
+          {!loading && <p>{summery}</p>}
           <div className="mt-3 flex justify-between p-2 text-C_Black">
             <span>Modify response</span>
-            <button onClick={handleClick}>
+            <button onClick={fetchSummery}>
               <FontAwesomeIcon
                 icon={faRefresh}
                 className={`text-md self-end pr-3  ${
