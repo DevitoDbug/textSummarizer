@@ -3,20 +3,24 @@ import React, { createContext, useState } from 'react';
 export const RequestParameterContext = createContext();
 
 const RequestParameterContextProvider = ({ children }) => {
-  const [length, setLength] = useState('medium'); // ['short', 'medium', 'long']
-  const [format, setFormat] = useState('paragraph'); // ['paragraph', 'sentence']
-  const [extractiveness, setExtractiveness] = useState('low'); // ['low', 'medium', 'high']
-  const [temperature, setTemperature] = useState(0.3); // [0.0, 1.0]
+  const [selectedOption, setSelectedOption] = useState(0);
+  const [selectedOptionsId_ValueId, setSelectedOptionsId_ValueId] = useState(0);
+
+  const [data, setData] = useState({
+    text: '',
+    length: 'medium',
+    format: 'paragraph',
+    extractiveness: 'low',
+    temperature: 0.3,
+  });
 
   const contextValue_RequestParameters = {
-    length,
-    setLength,
-    format,
-    setFormat,
-    extractiveness,
-    setExtractiveness,
-    temperature,
-    setTemperature,
+    selectedOption,
+    setSelectedOption,
+    selectedOptionsId_ValueId,
+    setSelectedOptionsId_ValueId,
+    data,
+    setData,
   };
 
   return (
