@@ -150,8 +150,8 @@ const ChatApp = () => {
 
   return (
     <div className="h-full w-full overflow-hidden p-1">
-      <div className="flex h-full w-full flex-col gap-2 p-2">
-        <form className="flex flex-col gap-2 p-1">
+      <div className="flex h-full w-full flex-col gap-3 p-2 md:grid md:grid-cols-2 md:gap-4">
+        <form className="flex flex-col gap-2 p-1 md:col-span-1 md:p-4">
           <textarea
             className="rounded-lg outline-none"
             type="text"
@@ -170,7 +170,7 @@ const ChatApp = () => {
           </button>
         </form>
 
-        <div className="rounded-lg bg-C_White p-2 text-C_TextWhiteDull shadow-md">
+        <div className="rounded-lg bg-C_White p-2 text-C_TextWhiteDull shadow-md md:col-span-1 md:p-4">
           {loading && <div className="text-center">Loading...</div>}
           {!loading && <p>{summery}</p>}
           <div className="mt-3 flex justify-between p-2 text-C_Black">
