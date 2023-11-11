@@ -17,7 +17,12 @@ const DownloadPDF = () => {
             return <div>Something went wrong</div>;
           }
           return loading ? (
-            <span>Loading document...</span>
+            <span className="flex items-center gap-2 rounded-3xl border border-C_Blue pl-2">
+              Loading document...
+              <span className="animate-bounce rounded-full border border-C_Blue bg-blue-600 p-1 text-white ">
+                <span className="p-1 ">...</span>
+              </span>
+            </span>
           ) : (
             <button className="flex items-center gap-2 rounded-3xl border border-C_Blue pl-2">
               Download
