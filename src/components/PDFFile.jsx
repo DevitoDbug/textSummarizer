@@ -1,15 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Document, Page, Text, StyleSheet } from '@react-pdf/renderer';
-// import { DowloadPdfContext } from '../context/DownloadPDFContext';
+import { DowloadPdfContext } from '../context/DownloadPDFContext';
 
 const PDFFile = () => {
-  // const pdfData = useContext(DowloadPdfContext);
-
-  const pdfData = {
-    pdfTitle: 'PDF Title',
-    pdfText:
-      'This is a PDF file generated with React and React-PDF in the client side.',
-  };
+  const pdfData = useContext(DowloadPdfContext);
 
   const styles = StyleSheet.create({
     page: {

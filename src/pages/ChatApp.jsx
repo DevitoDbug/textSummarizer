@@ -4,6 +4,7 @@ import ResponseModifierOptions from '../components/ResponseModifierOptions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
 import DownloadPDF from '../components/DownloadPDF';
+import { DowloadPdfContext } from '../context/DownloadPDFContext';
 
 const ChatApp = () => {
   const [inputText, setInputText] = useState('');
@@ -18,6 +19,9 @@ const ChatApp = () => {
 
   //request data
   const contextValue_RequestParameters = useContext(RequestParameterContext);
+
+  //update download pdf
+  const pdfData = useContext(DowloadPdfContext);
 
   //buttons
   const buttons = [
@@ -92,6 +96,11 @@ const ChatApp = () => {
     fetchSummery();
   };
 
+  const updateDownloadPDF = () => {
+    pdfData.setPdfText(summery);
+    pdfData.setPdfTitle('Your summery');
+  };
+
   const fetchSummery = async () => {
     setLoading(true);
     if (requestData.text === '' || requestData.text === undefined) {
@@ -120,6 +129,7 @@ const ChatApp = () => {
       }
     }
     setRegenerate(false);
+    updateDownloadPDF();
   };
 
   useEffect(() => {
@@ -207,7 +217,7 @@ const ChatApp = () => {
               </div>
             ))}
           </div>
-          {true && (
+          {summery && (
             <div className="mt-5 w-28  text-sm text-C_GreyBlue">
               <DownloadPDF />
             </div>
