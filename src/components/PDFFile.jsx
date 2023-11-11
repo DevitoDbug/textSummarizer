@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Document, Page, Text, StyleSheet } from '@react-pdf/renderer';
+import { DowloadPdfContext } from '../context/DownloadPDFContext';
 
-const PDFFile = (text, title) => {
+const PDFFile = () => {
+  const pdfData = useContext(DowloadPdfContext);
   const styles = StyleSheet.create({
     page: {
       flexDirection: 'column',
@@ -35,8 +37,8 @@ const PDFFile = (text, title) => {
     <>
       <Document>
         <Page size="A4" style={styles.page}>
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.text}>{text}</Text>
+          <Text style={styles.title}>{pdfData.pdfTitle}</Text>
+          <Text style={styles.text}>{pdfData.pdfText}</Text>
           <Text
             style={styles.pageNumber}
             render={({ pageNumber, totalPages }) =>

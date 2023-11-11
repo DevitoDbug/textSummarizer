@@ -7,22 +7,25 @@ import ChatApp from './pages/ChatApp';
 import Navbar from './components/Navbar';
 import SummeryDataContextProvider from './context/SummeryCardContext';
 import RequestParameterContextProvider from './context/RequestParameterContext';
+import DownloadPDFContextProvider from './context/DownloadPDFContext';
 const App = () => {
   return (
     <div className=" h-screen w-screen bg-C_GreyShades ">
       <SummeryDataContextProvider>
         <RequestParameterContextProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/summeries" element={<Summeries />} />
-              <Route path="/bookmarks" element={<BookMarks />} />
-              <Route path="/chatapp" element={<ChatApp />} />
-            </Routes>
-            <div className="sticky bottom-0">
-              <Navbar />
-            </div>
-          </BrowserRouter>
+          <DownloadPDFContextProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/summeries" element={<Summeries />} />
+                <Route path="/bookmarks" element={<BookMarks />} />
+                <Route path="/chatapp" element={<ChatApp />} />
+              </Routes>
+              <div className="sticky bottom-0">
+                <Navbar />
+              </div>
+            </BrowserRouter>
+          </DownloadPDFContextProvider>
         </RequestParameterContextProvider>
       </SummeryDataContextProvider>
     </div>
