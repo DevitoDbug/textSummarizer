@@ -1,9 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Document, Page, Text, StyleSheet } from '@react-pdf/renderer';
-import { DowloadPdfContext } from '../context/DownloadPDFContext';
+// import { DowloadPdfContext } from '../context/DownloadPDFContext';
 
 const PDFFile = () => {
-  const pdfData = useContext(DowloadPdfContext);
+  // const pdfData = useContext(DowloadPdfContext);
+
+  const pdfData = {
+    pdfTitle: 'PDF Title',
+    pdfText:
+      'This is a PDF file generated with React and React-PDF in the client side.',
+  };
+
   const styles = StyleSheet.create({
     page: {
       flexDirection: 'column',
@@ -34,20 +41,16 @@ const PDFFile = () => {
     },
   });
   return (
-    <>
-      <Document>
-        <Page size="A4" style={styles.page}>
-          <Text style={styles.title}>{pdfData.pdfTitle}</Text>
-          <Text style={styles.text}>{pdfData.pdfText}</Text>
-          <Text
-            style={styles.pageNumber}
-            render={({ pageNumber, totalPages }) =>
-              `${pageNumber}/${totalPages}`
-            }
-          />
-        </Page>
-      </Document>
-    </>
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <Text style={styles.title}>{pdfData?.pdfTitle}</Text>
+        <Text style={styles.text}>{pdfData?.pdfText}</Text>
+        <Text
+          style={styles.pageNumber}
+          render={({ pageNumber, totalPages }) => `${pageNumber}/${totalPages}`}
+        />
+      </Page>
+    </Document>
   );
 };
 

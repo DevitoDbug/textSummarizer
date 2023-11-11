@@ -207,9 +207,11 @@ const ChatApp = () => {
               </div>
             ))}
           </div>
-          <div className="mt-5">
-            <DownloadPDF />
-          </div>
+          {true && (
+            <div className="mt-5 w-28  text-sm text-C_GreyBlue">
+              <DownloadPDF />
+            </div>
+          )}
         </div>
       </div>
     </div>

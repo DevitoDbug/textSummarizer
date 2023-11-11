@@ -10,7 +10,7 @@ const DownloadPDF = () => {
       <PDFDownloadLink
         document={<PDFFile />}
         fileName="summary.pdf"
-        className="flex items-center gap-2 rounded-3xl border border-C_Blue pl-3 text-sm text-C_GreyBlue"
+        className=""
       >
         {({ loading, error }) => {
           if (error) {
@@ -19,14 +19,16 @@ const DownloadPDF = () => {
           return loading ? (
             <span>Loading document...</span>
           ) : (
-            <button>Download</button>
+            <button className="flex items-center gap-2 rounded-3xl border border-C_Blue pl-2">
+              Download
+              <span className="rounded-full border border-C_Blue bg-blue-600 p-1 text-white">
+                <span className="p-1 ">
+                  <FontAwesomeIcon icon={faArrowDown} />
+                </span>
+              </span>
+            </button>
           );
         }}
-        <span className="rounded-full border border-C_Blue bg-blue-600 p-1 text-white">
-          <span className="p-1 ">
-            <FontAwesomeIcon icon={faArrowDown} />
-          </span>
-        </span>
       </PDFDownloadLink>
     </>
   );
