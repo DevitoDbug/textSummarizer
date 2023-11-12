@@ -10,7 +10,7 @@ const RequestParameterContextProvider = ({ children }) => {
     text: '',
     length: 'medium',
     format: 'paragraph',
-    extractiveness: 'low',
+    extractiveness: 'high',
     temperature: 0.3,
   });
 
