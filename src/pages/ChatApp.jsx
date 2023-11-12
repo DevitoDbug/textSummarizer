@@ -100,6 +100,10 @@ const ChatApp = () => {
     pdfData.setPdfTitle('Your summery');
   };
 
+  useEffect(() => {
+    updateDownloadPDF();
+  }, [summery]);
+
   const fetchSummery = async () => {
     setLoading(true);
     if (requestData.text === '' || requestData.text === undefined) {
@@ -111,8 +115,6 @@ const ChatApp = () => {
           headers: headers,
           body: JSON.stringify(requestData),
         });
-        console.log(requestData);
-
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -120,6 +122,7 @@ const ChatApp = () => {
         const data = await response.json();
         // Handle the response data here
         setSummery(data.summary);
+        console.log(data.summary);
       } catch (error) {
         // Handle any errors here
         console.error('Error:', error);
@@ -217,9 +220,14 @@ const ChatApp = () => {
             ))}
           </div>
           {summery && (
-            <div className="mt-5 w-28  text-sm text-C_GreyBlue">
+            <button
+              onClick={() => {
+                pdfData.generatePDF();
+              }}
+              className="mt-5 w-28  text-sm text-C_GreyBlue"
+            >
               Download file
-            </div>
+            </button>
           )}
         </div>
       </div>
