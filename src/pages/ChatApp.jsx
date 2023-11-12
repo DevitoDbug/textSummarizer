@@ -3,7 +3,6 @@ import { RequestParameterContext } from '../context/RequestParameterContext';
 import ResponseModifierOptions from '../components/ResponseModifierOptions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
-import DownloadPDF from '../components/DownloadPDF';
 import { DowloadPdfContext } from '../context/DownloadPDFContext';
 
 const ChatApp = () => {
@@ -219,7 +218,7 @@ const ChatApp = () => {
           </div>
           {summery && (
             <div className="mt-5 w-28  text-sm text-C_GreyBlue">
-              <DownloadPDF />
+              Download file
             </div>
           )}
         </div>
