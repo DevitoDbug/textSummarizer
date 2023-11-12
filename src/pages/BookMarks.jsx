@@ -17,7 +17,7 @@ const BookMarks = () => {
           <Link to={'/summeries'}>View all</Link>
         </span>
       </div>
-      <div className="mt-5 w-[90%] overflow-scroll pb-40">
+      <div className="mt-5 w-[90%] items-center pb-40">
         {data.map(
           (data, index) =>
             data.bookmarked && (
