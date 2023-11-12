@@ -15,13 +15,15 @@ const App = () => {
         <RequestParameterContextProvider>
           <DownloadPDFContextProvider>
             <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/summeries" element={<Summeries />} />
-                <Route path="/bookmarks" element={<BookMarks />} />
-                <Route path="/chatapp" element={<ChatApp />} />
-              </Routes>
-              <div className="sticky bottom-0">
+              <div className="h-[91%] overflow-y-scroll ">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/summeries" element={<Summeries />} />
+                  <Route path="/bookmarks" element={<BookMarks />} />
+                  <Route path="/chatapp" element={<ChatApp />} />
+                </Routes>
+              </div>
+              <div className="fixed bottom-0 w-full">
                 <Navbar />
               </div>
             </BrowserRouter>

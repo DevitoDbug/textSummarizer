@@ -162,7 +162,7 @@ const ChatApp = () => {
   }, []);
 
   return (
-    <div className="h-full w-full overflow-hidden p-1">
+    <div className="h-full w-full p-1">
       <div className="flex h-full w-full flex-col gap-3 p-2 md:grid md:grid-cols-2 md:gap-4">
         <form className="flex flex-col gap-2 p-1 md:col-span-1 md:p-4">
           <textarea
@@ -183,7 +183,7 @@ const ChatApp = () => {
           </button>
         </form>
 
-        <div className="rounded-lg bg-C_White p-2 text-C_TextWhiteDull shadow-md md:col-span-1 md:p-4">
+        <div className="rounded-lg p-2 text-C_TextWhiteDull shadow-md md:col-span-1 md:p-4">
           {loading && <div className="text-center">Loading...</div>}
           {!loading && <p>{summery}</p>}
           <div className="mt-3 flex justify-between p-2 text-C_Black">
@@ -205,7 +205,7 @@ const ChatApp = () => {
                     handleOptionClick(button.onClick);
                     setOptionsVisible(true);
                   }}
-                  className="rounded-md border-2  border-gray-300 px-3 py-1 text-sm  text-C_TextWhiteDull hover:bg-C_Blue hover:text-white"
+                  className="rounded-md border-2 border-gray-300 px-3 py-1 text-sm  text-C_TextWhiteDull hover:bg-C_Blue hover:text-white"
                 >
                   {button.name}
                 </button>
@@ -221,10 +221,10 @@ const ChatApp = () => {
           </div>
           {summery && (
             <button
+              className="mt-5 w-28  rounded-2xl bg-C_Blue px-1 py-2 text-sm font-bold text-C_White hover:bg-blue-500"
               onClick={() => {
                 pdfData.generatePDF();
               }}
-              className="mt-5 w-28  text-sm text-C_GreyBlue"
             >
               Download file
             </button>
