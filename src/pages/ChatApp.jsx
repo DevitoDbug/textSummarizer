@@ -22,7 +22,6 @@ const ChatApp = () => {
   //update download pdf
   const pdfData = useContext(DowloadPdfContext);
 
-  //buttons
   const buttons = [
     {
       id: 1,
@@ -221,12 +220,12 @@ const ChatApp = () => {
           </div>
           {summery && (
             <button
-              className="mt-5 w-28  rounded-2xl bg-C_Blue px-1 py-2 text-sm font-bold text-C_White hover:bg-blue-500"
+              className="w-29 mt-5 rounded-2xl bg-C_Blue px-1.5 py-2 text-sm font-bold text-C_White hover:bg-blue-500"
               onClick={() => {
                 pdfData.generatePDF();
               }}
             >
-              Download file
+              Download .pdf
             </button>
           )}
         </div>

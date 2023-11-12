@@ -57,10 +57,10 @@ const Navbar = () => {
   }, [location.pathname, navIcons]);
 
   return (
-    <div className=" flex justify-around gap-7 overflow-y-hidden border-b-0 border-t-2 bg-C_GreyShades px-6">
+    <div className=" flex justify-around gap-7 overflow-y-hidden border-b-0 border-t-2 bg-C_GreyShades px-6 md:rounded-3xl md:border">
       {navIcons.map((icon, index) => (
         <div
-          className="relative flex h-14 w-14 flex-col items-center justify-center"
+          className="relative flex h-14 w-14 flex-col items-center justify-center md:h-16 md:w-16 "
           key={index}
         >
           <button
@@ -76,13 +76,13 @@ const Navbar = () => {
           >
             <FontAwesomeIcon
               icon={icon.icon}
-              className={`text-md ${
+              className={`text-md md:text-lg ${
                 active === index ? ' scale-150 font-extrabold text-C_Blue ' : ''
               } transition-colors duration-300 `}
             />
           </button>
           <span
-            className={`absolute text-xs font-bold text-C_Blue ${
+            className={`absolute text-xs font-bold text-C_Blue md:text-sm ${
               active === index
                 ? '-bottom-6 -translate-y-8 transform opacity-100 duration-100 ease-in-out'
                 : '-bottom-6 transform opacity-0 duration-100 ease-in-out'
