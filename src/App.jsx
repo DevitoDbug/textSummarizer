@@ -16,15 +16,15 @@ const App = () => {
           <DownloadPDFContextProvider>
             <BrowserRouter>
               <div className="h-[89%] overflow-y-scroll ">
-                <Routes>
+                {/* <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/summeries" element={<Summeries />} />
                   <Route path="/bookmarks" element={<BookMarks />} />
                   <Route path="/chatapp" element={<ChatApp />} />
-                </Routes>
+                </Routes> */}
               </div>
               <div className="fixed bottom-0 w-full md:bottom-3 md:w-[60%] md:self-center md:rounded-3xl">
-                <Navbar />
+                {/* <Navbar /> */}
               </div>
             </BrowserRouter>
           </DownloadPDFContextProvider>

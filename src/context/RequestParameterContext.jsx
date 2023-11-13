@@ -9,7 +9,7 @@ const RequestParameterContextProvider = ({ children }) => {
   const [data, setData] = useState({
     text: '',
     length: 'medium',
-    format: 'paragraph',
+    format: 'bullets',
     extractiveness: 'high',
     temperature: 0.3,
   });
