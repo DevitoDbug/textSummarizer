@@ -6,6 +6,9 @@ import { faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { DowloadPdfContext } from '../context/DownloadPDFContext';
 
 const ChatApp = () => {
+  const MINIMUM_LENGTH = 50;
+  const MAX_LENGTH = 255000;
+
   const [inputText, setInputText] = useState('');
   const [summery, setSummery] = useState('');
   const [options, setOptions] = useState([]);
@@ -95,7 +98,11 @@ const ChatApp = () => {
   };
 
   const updateDownloadPDF = () => {
-    pdfData.setPdfText(summery);
+    const paddedSummery = summery.padEnd(MINIMUM_LENGTH);
+
+    const truncatedSummery = paddedSummery.slice(0, MAX_LENGTH);
+
+    pdfData.setPdfText(truncatedSummery);
     pdfData.setPdfTitle('Your summery');
   };
 
