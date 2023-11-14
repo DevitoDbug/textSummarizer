@@ -4,6 +4,7 @@ import ResponseModifierOptions from '../components/ResponseModifierOptions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { DowloadPdfContext } from '../context/DownloadPDFContext';
+import TypingAnimation from './TypingText';
 
 const ChatApp = () => {
   const MINIMUM_LENGTH = 50;
@@ -191,7 +192,7 @@ const ChatApp = () => {
 
         <div className="rounded-lg p-2 text-C_TextWhiteDull shadow-md md:col-span-1 md:p-4">
           {loading && <div className="text-center">Loading...</div>}
-          {!loading && <p>{summery}</p>}
+          {!loading && <TypingAnimation summaryText={summery} />}
           <div className="mt-3 flex justify-between p-2 text-C_Black">
             <span>Modify response</span>
             <button onClick={fetchSummery}>
